@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="YouTube Logger Sync の機能とGoogleドライブのデータの取り扱いについて。">
+<meta name="description" content="YouTube Logger Sync の機能とクラウドサービスのデータの取り扱いについて。">
 <meta name="referrer" content="no-referrer">
 <title>YouTube Logger Sync</title>
 <style>:root{color-scheme:light;--ink:#253238;--muted:#60727a;--green:#176b68;--line:#d8e5e4}*{box-sizing:border-box}body{margin:0;background:#f1f6f5;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Yu Gothic",sans-serif;line-height:1.9}main{max-width:800px;margin:48px auto;padding:32px 40px;background:#fff;border:1px solid var(--line);border-radius:18px}nav{display:flex;flex-wrap:wrap;gap:12px 24px;font-size:.95rem;border-bottom:1px solid var(--line);padding-bottom:20px}a{color:var(--green);text-underline-offset:4px;overflow-wrap:anywhere}a:focus-visible{outline:3px solid #d98b15;outline-offset:4px}h1{font-size:clamp(1.65rem,5vw,2.2rem);line-height:1.4;overflow-wrap:anywhere;margin:30px 0 8px}h2{font-size:1.22rem;line-height:1.5;margin-top:30px}p,ul,ol{margin:12px 0}ul,ol{padding-left:1.5em}code{font-size:.9em;overflow-wrap:anywhere}.eyebrow,.date,footer{color:var(--muted);font-size:.9rem}.lead{font-size:1.08rem}.note{padding:18px 22px;background:#eaf5f2;border-left:4px solid var(--green);border-radius:6px}footer{border-top:1px solid var(--line);padding-top:18px;margin-top:32px}@media(max-width:600px){main{margin:16px;padding:22px 20px;border-radius:12px}}</style>
@@ -11,22 +11,23 @@
 <body>
 <main>
 <nav aria-label="説明ページ"><a href="./index.html">ツールの説明</a><a href="./privacy.html">プライバシーポリシー</a><a href="./terms.html">利用条件</a></nav>
-<p class="eyebrow">PERSONAL HISTORY / GOOGLE DRIVE SYNC</p>
+<p class="eyebrow">PERSONAL HISTORY / CLOUD SYNC</p>
 <h1>YouTube Logger Sync</h1>
-<p class="lead">本人のYouTubeアクセス履歴を、スマートフォンから振り返るための個人用ツールです。</p>
+<p class="lead">作者のYouTubeアクセス履歴を、スマートフォンから振り返るための個人用ツールです。</p>
+<p>作者以外への公開、提供は一切行っていません。</p>
 <h2>できること</h2>
-<p>WindowsのNASに保存されたYouTube履歴のHTMLを、本人が承認したGoogleアカウントのGoogleドライブへ定期的に送信します。最初に作成したログ用のHTMLファイルを更新し、スマートフォンでは本人用の閲覧ページからその内容を確認します。</p>
-<p>元の履歴は、本人のPCのFirefoxに保存されたアクセス履歴をもとに作成します。動画のタイトル、URL、アクセス日時、端末の表示名などを振り返るために使います。動画の再生時間や最後まで見たかどうかを測定する機能ではありません。</p>
+<p>Windowsのサーバーに保存されたYouTube履歴のHTMLを、作者が承認したGoogleアカウントのクラウドサービスへ定期的に送信します。最初に作成したログ用のHTMLファイルを更新し、スマートフォンでは作者用の閲覧ページからその内容を確認します。</p>
+<p>元の履歴は、作者のPCのブラウザに保存されたアクセス履歴をもとに作成します。動画のタイトル、URL、アクセス日時、端末の表示名などを振り返るために使います。動画の再生時間や最後まで見たかどうかを測定する機能ではありません。</p>
 <h2>Googleアカウントとの連携</h2>
-<p>Googleドライブへの送信には、本人による初回のGoogle承認が必要です。要求する権限は <code>https://www.googleapis.com/auth/drive.file</code> です。送信プログラムは、初回に作成したログ用HTMLのファイルIDを保存し、そのファイルを継続して更新します。</p>
-<p>この権限は、アプリが作成したファイルや利用者がアプリに明示的に許可したファイルへのアクセスを対象とします。今回の実装は、本人のドライブ全体を検索したり、他のファイルを一括取得したりする用途には使いません。</p>
+<p>クラウドサービスへの送信には、作者による初回のGoogle承認が必要です。要求する権限は <code>https://www.googleapis.com/auth/drive.file</code> です。送信プログラムは、初回に作成したログ用HTMLのファイルIDを保存し、そのファイルを継続して更新します。</p>
+<p>この権限は、アプリが作成したファイルや利用者がアプリに明示的に許可したファイルへのアクセスを対象とします。今回の実装は、作者のドライブ全体を検索したり、他のファイルを一括取得したりする用途には使いません。</p>
 <h2>利用する人とデータの保存先</h2>
-<p>対象は、このツールとGoogle Cloudプロジェクトを管理する所有者本人です。履歴は本人のPC・NASと本人のGoogleドライブに保存します。送信プログラムに、共有設定を一般公開へ変更する機能はありません。</p>
+<p>対象は、このツールとGoogle Cloudプロジェクトを管理する作者です。履歴は作者のPC・サーバーと作者のクラウドサービスに保存します。送信プログラムに、共有設定を一般公開へ変更する機能はありません。</p>
 <p class="note">このサイトでは、ツールの説明とデータの取り扱いだけを掲載しています。</p>
 <h2>データの取り扱い</h2>
 <p><a href="./privacy.html">プライバシーポリシー</a>で、扱うデータ、利用目的、保存・削除、承認情報の保護について説明しています。<a href="./terms.html">利用条件</a>もご確認ください。</p>
 <h2>運用者と連絡先</h2>
-<p>運用者は、このアプリのGoogle Cloudプロジェクトの所有者です。本人用のアプリのため、連絡先にはGoogleの承認設定に登録したユーザーサポートメールを使用します。</p>
+<p>運用者は、このアプリのGoogle Cloudプロジェクトの所有者です。作者用のアプリのため、連絡先にはGoogleの承認設定に登録したユーザーサポートメールを使用します。</p>
 <footer>YouTube Logger Sync · 個人利用のためのツール<br>説明ページ更新日：2026年10月7日</footer>
 </main>
 </body>
