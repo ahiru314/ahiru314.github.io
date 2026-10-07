@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="YouTube Logger Sync の機能とGoogleドライブのデータの取り扱いについて。">
+<meta name="referrer" content="no-referrer">
+<title>プライバシーポリシー | YouTube Logger Sync</title>
+<style>:root{color-scheme:light;--ink:#253238;--muted:#60727a;--green:#176b68;--line:#d8e5e4}*{box-sizing:border-box}body{margin:0;background:#f1f6f5;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Yu Gothic",sans-serif;line-height:1.9}main{max-width:800px;margin:48px auto;padding:32px 40px;background:#fff;border:1px solid var(--line);border-radius:18px}nav{display:flex;flex-wrap:wrap;gap:12px 24px;font-size:.95rem;border-bottom:1px solid var(--line);padding-bottom:20px}a{color:var(--green);text-underline-offset:4px;overflow-wrap:anywhere}a:focus-visible{outline:3px solid #d98b15;outline-offset:4px}h1{font-size:clamp(1.65rem,5vw,2.2rem);line-height:1.4;overflow-wrap:anywhere;margin:30px 0 8px}h2{font-size:1.22rem;line-height:1.5;margin-top:30px}p,ul,ol{margin:12px 0}ul,ol{padding-left:1.5em}code{font-size:.9em;overflow-wrap:anywhere}.eyebrow,.date,footer{color:var(--muted);font-size:.9rem}.lead{font-size:1.08rem}.note{padding:18px 22px;background:#eaf5f2;border-left:4px solid var(--green);border-radius:6px}footer{border-top:1px solid var(--line);padding-top:18px;margin-top:32px}@media(max-width:600px){main{margin:16px;padding:22px 20px;border-radius:12px}}</style>
+</head>
+<body>
+<main>
+<nav aria-label="説明ページ"><a href="./index.html">ツールの説明</a><a href="./privacy.html">プライバシーポリシー</a><a href="./terms.html">利用条件</a></nav>
+<h1>プライバシーポリシー</h1>
+<p>YouTube Logger Sync は、所有者本人のYouTubeアクセス履歴を本人のGoogleドライブに送信し、本人がスマートフォンから振り返るために使用する個人用ツールです。</p>
+<p class="date">最終更新：2026年10月7日</p>
+<h2>1. アクセス・送信するデータ</h2>
+<ul><li>本人のNASで生成された履歴HTML。動画タイトル、URL、アクセス日時、端末の表示名などを含みます。</li><li>送信先のログ用HTMLに関するファイル情報。ファイルID、名前、種類、サイズ、更新日時、チェックサム、ゴミ箱の状態などを、送信と確認のために使用します。</li><li>Googleへの送信を本人が許可したことを示すOAuth承認情報。</li></ul>
+<p>Googleドライブへのアクセス権限は <code>https://www.googleapis.com/auth/drive.file</code> に限定します。初回に本ツールが作成したログ用HTMLを、保存したファイルIDで更新します。Googleアカウントのパスワードをツールへ入力・保存する必要はありません。</p>
+<h2>2. 利用目的</h2>
+<p>データは、本人のログ用HTMLの送信・更新、送信結果の確認、本人による履歴の振り返りに使用します。本ツールは広告配信、データの販売、第三者向けの分析のためにデータを使用しません。Google API経由で扱うデータを、汎用AI・機械学習モデルの学習に使用する機能もありません。</p>
+<h2>3. 保存先と共有</h2>
+<p>履歴データは、本人のPC・NASと本人が承認したGoogleアカウントのGoogleドライブに保存します。Googleへの通信は、Googleの認証処理とファイル保存サービスを利用するために行います。本ツールが履歴や認証情報をGitHubなどの説明ページの公開先へ送信することはありません。</p>
+<p>送信プログラムはGoogleドライブのファイルの共有権限を変更しません。閲覧ページは本人のみがアクセスできる設定で利用します。利用者がGoogleドライブや閲覧ページの共有設定を変更した場合、その設定に従って閲覧できる範囲が変わります。</p>
+<h2>4. 承認情報と通信の保護</h2>
+<p>Googleとの通信にはHTTPSを使います。NASの送信プログラムは、OAuth承認情報をWindowsのDPAPIで暗号化して保存します。保存場所には、SYSTEMと管理者に限定したWindowsのアクセス権限を設定します。送信処理は、Googleの所定の認証・API送信先を使用します。</p>
+<h2>5. 保存期間と削除</h2>
+<p>履歴は、利用者が管理する保存先に残ります。送信先の閲覧用HTMLは、新しい内容で更新します。本ツールは保存期間を指定して全履歴を自動消去する機能を提供しません。</p>
+<p>送信を止めるには、NASの自動送信ツールに含まれる「停止.cmd」または「タスク削除.cmd」を使用できます。Googleアカウント側からアプリの承認を取り消すこともできます。これらの操作だけでは、保存済みの履歴は削除されません。</p>
+<p>保存済みの履歴を削除する場合は、本人が管理するPC・NASのログとGoogleドライブ上の対象ファイルをそれぞれ削除してください。Googleドライブのゴミ箱や過去の版の扱いは、Googleのサービス仕様に従います。再収集・再送信が不要な場合は、その処理も停止してください。</p>
+<h2>6. 説明ページについて</h2>
+<p>この説明ページには、独自のアクセス解析、広告、ログインフォームを設置していません。GitHub Pagesで公開した場合、提供者のGitHubはセキュリティのために訪問者のIPアドレスを記録します。公開先のサービスによる処理については、<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubのプライバシーに関する説明</a>をご確認ください。</p>
+<h2>7. 運用者と変更</h2>
+<p>運用者は、本ツールのGoogle Cloudプロジェクトの所有者です。連絡先にはGoogleの承認設定に登録したユーザーサポートメールを使用します。機能やデータの取り扱いを変更した場合は、このページも更新します。</p>
+<p><a href="./index.html">YouTube Logger Sync の説明に戻る</a></p>
+<footer>YouTube Logger Sync · 個人利用のためのツール<br>説明ページ更新日：2026年10月7日</footer>
+</main>
+</body>
+</html>
